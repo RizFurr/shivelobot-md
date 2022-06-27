@@ -150,13 +150,12 @@ module.exports = handler = async (m, conn, map) => {
 						externalAdReply: {
 							title: "©" + config.namebot,
 							mediaType: 2,
-			  mediaType: "PHOTO",
+			                                mediaType: "PHOTO",
 							//renderLargerThumbnail: true,
 							//showAdAttribution: true,
-							body: "multi-device whatsapp bot using JavaScript and made by " +
-								config.ownername,
+							body: "multi-device whatsapp bot using JavaScript and made by " + config.ownername,
 							thumbnail: await conn.getBuffer(config.thumb),
-							sourceUrl: "https://github.com/rizfurr/rakubot-md/",
+							sourceUrl: "https://github.com/rizfurr/ShiveloBot-md/",
 						},
 				  })
 				: "";
