@@ -11,9 +11,12 @@ RUN apt-get update && \
 COPY package.json .
 
 RUN npm install
+RUN npm install pm2 -g
+ENV PM2_PUBLIC_KEY f5wkoc9q7mah2ks
+ENV PM2_SECRET_KEY 2tv672rb58rifm8
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "main.js"]
+CMD ["pm2-runtime", "main.js"]
