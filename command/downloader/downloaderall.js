@@ -1,31 +1,21 @@
-const axios = require("axios");
-const expand = async (url) => {
-	let axs = await axios.get("https://caliph.my.id/api/expandurl.php?url=" + url);
-	return axs.data.result;
-};
-
 module.exports = {
 	name: "downloaderall",
-	alias: ["pinterest", "pindl", "tiktokaudio", "tiktok", "fbdl", "fb", "facebook"],
+	alias: ["pinterest", "pindl", "tiktokaudio", "tiktok", "fbdl", "fb", "soundcloud", "facebook"],
 	use: "<url>",
 	category: "downloader",
-	desc: "Download audio/video from Facebook, Imgur, Pinterest, Dan Tiktok",
+	desc: "Download audio/video from Facebook, Imgur, SoundCloud,  Pinterest, Dan Tiktok",
 	wait: true,
 	isUrl: true,
 	isSpam: true,
-	async run({ msg, conn }, { q, map, args }) { 
-		let rizz = require("rizfurr-api")
+	async run({ msg, conn }, { q, map, args }) {
 		var pilih = msg.body.split(/ +/)[0].slice(1);
 		var teks = args[0];
-		let tiktok;
-		if (pilih == "tiktok" || pilih == "tiktokaudio") tiktok = await rizz.downloader.tiktok(teks)
-		if (pilih == "tiktok" || pilih == "tiktokaudio") delete tiktok.result;
-		
 		var yt = await rzky.downloader.downloaderAll(teks);
 		if (pilih == "downloaderall") return msg.reply("Silahkan Pilih Downloader: tiktok,soundcloud,facebook");
 		var mp3 = yt.mp3[yt.mp3.length - 1];
 		var mp4 = yt.mp4[yt.mp4.length - 1];
 		var img = yt.image;
+		var audio = yt.result;
 		yt.size_audio = mp3 ? mp3.formattedSize : "";
 		yt.size_video = mp4 ? mp4.formattedSize : "";
 		delete yt.image;
@@ -33,7 +23,7 @@ module.exports = {
 		delete yt.mp3;
 		delete yt.status;
 		var result = await rzky.tools.parseResult(yt, {
-			title: "Downloader",
+			title: "Downloader All",
 		});
 		try {
 			switch (pilih) {
@@ -72,20 +62,38 @@ module.exports = {
 						}
 					);
 					break;
+				case "soundcloud":
+					await conn.sendFile(
+						msg.from,
+						img,
+						"Cover Art -"+yt.title+".jpg",
+						result.replace(/downloader_from/gi, "Downloader From"),
+						msg
+					);
+					await conn.sendMessage(
+						msg.from,
+						{
+							document: {
+							url: mp3.url,
+							},
+							mimetype: "audio/mpeg",
+							fileName: yt.title + ".mp3",
+						},
+						{
+							quoted: msg,
+						}
+					);
+					break;
 				case "tiktok":
 					await conn.sendMessage(
 						msg.from,
 						{
 							video: {
-								url: await tiktok.nowm,
+								url: mp4.url,
 							},
-							caption: await rzky.tools.parseResult(tiktok, { title: "Tiktok Download" }),
+							caption: result.replace(/downloader_from/gi, "Downloader From"),
 							mimetype: "video/mp4",
-							fileName: tiktok.title.substr(0, 19) + ".mp4",
-							templateButtons: [
-								{ urlButton: { displayText: "Source", url: q } },
-								{ quickReplyButton: { displayText: "Audio🎶", id: "#tiktokaudio " + q } },
-							],
+							fileName: yt.title.substr(0, 19) + ".mp4",
 						},
 						{
 							quoted: msg,
@@ -93,23 +101,22 @@ module.exports = {
 					);
 					break;
 				case "tiktokaudio":
-					await conn.sendMessage(
+					await conn.sendFile(
 						msg.from,
-						{
-							image: { url: await tiktok.thumbnail },
-							fileName: "tiktok.jpg",
-							caption: await rzky.tools.parseResult(tiktok, { title: "Tiktok Download" }),
-						},
-						{ quoted: msg }
+						img,
+						"yt.jpg",
+						result.replace(/downloader_from/gi, "Downloader From"),
+						msg
 					);
+					await 
 					await conn.sendMessage(
 						msg.from,
 						{
-							audio: {
-								url: tiktok.audio,
+							document: {
+							url: mp3.url,
 							},
 							mimetype: "audio/mpeg",
-							fileName: tiktok.author + ".mp3",
+							fileName: yt.title + ".mp3",
 						},
 						{
 							quoted: msg,
