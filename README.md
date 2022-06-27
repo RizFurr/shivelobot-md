@@ -1,15 +1,12 @@
-<h1 align="center">Welcome<img src="https://user-images.githubusercontent.com/1303154/88677602-1635ba80-d120-11ea-84d8-d263ba5fc3c0.gif" width="40px" alt=""><br></h1>
-<p align="center">Rzky Multi Device</p>
+<p align="center">ShiveloBot MultiDevice</p>
 <div align="center">
-<img src="https://telegra.ph/file/1ad6f99162dc762ccabc2.jpg" width="150" height="150" border="0" alt="PFFP">
+<img src="https://pbs.twimg.com/media/FVSaBhWVIAIJTj6?format=jpg&name=large" width="150" height="150" border="0" alt="PFFP">
 
 <br> Gunakan dengan risiko Anda sendiri!
 
-[![Check Error](https://github.com/Rizky878/rzky-multidevice/actions/workflows/node.js.yml/badge.svg)](https://github.com/Rizky878/rzky-multidevice/actions/workflows/node.js.yml)
+[![Check Error](https://github.com/Rizky878/rzky-multidevice/actions/workflows/node.js.yml/badge.svg)](https://github.com/rizfurr/shivelobot/actions/workflows/node.js.yml)
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-d6cc0f?style=for-the-badge&logo=javascript&logoColor=white)](https://javascript.com) [![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-
-<a href="https://chat.whatsapp.com/HJonYuPOQk4DO6bmQ5Naru"> <img src="https://img.shields.io/badge/whatsapp-Support_Group-blue?style=social&logo=whatsapp" alt="support" /></a>
 
 > Dibuat dengan Baileys dan Map() ( sebagai command handler ) <br />
 
@@ -54,12 +51,12 @@ module.exports = {
 
 ## Contoh Options
 
-Contoh Command : [`./command/umum/help.js`](https://github.com/Rizky878/rzky-multidevice/blob/main/command/umum/help.js)<br />
+Contoh Command : [`./command/umum/help.js`](https://github.com/rizfurr/shivelobot/blob/main/command/umum/help.js)<br />
 
 ```js
 {
   name: "help",
-  alias: ["h","menu","cmd"],
+  alias: ["menu","cmd"],
   desc: "menampilkan menu",
   category: "umum",
   wait: true
@@ -75,7 +72,7 @@ Contoh Command : [`./command/umum/help.js`](https://github.com/Rizky878/rzky-mul
 
 ## Config
 
-Isi semua yang dibutuhkan di file [`config.json`](https://github.com/Rizky878/rzky-multidevice/blob/main/config.json)<br />
+Isi semua yang dibutuhkan di file [`config.json`](https://github.com/rizfurr/shivelobot/blob/main/config.json)<br />
 
 ## Request atau report bug
 
@@ -86,15 +83,18 @@ Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/628
 ### Clone Repo
 
 ```bash
-> pkg install
-> pkg upgrade
-> pkg install git
-> pkg install ffmpeg && pkg install libwebp
-> pkg install nodejs
-> git clone --depth=1 https://github.com/Rizky878/rzky-multidevice/
-> cd rzky-multidevice
-> npm install --arch=x64 --platform=linux sharp
-> npm start
+# Note! Hapus Command elus.js dan 
+$ npm uninstall pet-pet-gif
+
+$ pkg install
+$ pkg upgrade
+$ pkg install git
+$ pkg install ffmpeg && pkg install libwebp
+$ pkg install nodejs
+$ git clone --depth=1 https://github.com/rizfurr/shivelobot/
+$ cd shivelobot
+$ npm install --arch=x64 --platform=linux sharp
+$ npm start
 # Scan QR
 ```
 
@@ -113,10 +113,10 @@ Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/628
 
 ```bash
 # apt (Ubuntu)
-apt install ffmpeg -y
+$ apt install ffmpeg -y
 
 # pacman (Arch Linux)
-pacman -S ffmpeg
+$ pacman -S ffmpeg
 ```
 
 ### Install libWebP
@@ -129,44 +129,45 @@ pacman -S ffmpeg
 4.  Buka PowerShell dan jalankan perintah berikut;
 
 ```cmd
-setx /m PATH "C:\libwebp\bin;%PATH%"
+> setx /m PATH "C:\libwebp\bin;%PATH%"
 ```
 
 > Bila sukses terinstal dengan baik, silahkan check dengan perintah berikut di Command Prompt
 
 ```cmd
-webpmux -version
+$ webpmux -version
 ```
 
 -   Untuk pengguna Linux, kamu bisa pakai manager paket kamu. Contohnya;
 
 ```bash
 # apt (Ubuntu)
-apt install libwebp-dev -y
+$ apt install libwebp-dev -y
 
 # pacman (Arch Linux)
-pacman -S libwebp
+$ pacman -S libwebp
 ```
 
 ### Clone Repo
 
 ```bash
 # clone repo
-git clone --depth=1 https://github.com/Rizky878/rzky-multidevice
+$ git clone --depth=1 https://github.com/rizfurr/shivelobot
 
 # ubah posisi direktori kamu
-cd rzky-multidevice
+$ cd shivelobot
 
 # install semua module
-npm install
+$ npm install
+
 # atau
-yarn install
+$ yarn install
 
 # bila libray @adiwajshing/baileys error, jalan kan kode yg ada dibawah ini
 
-cd ./node_modules/@adiwajshing/baileys
-npm install -g typescript
-npm run build:tsc
+$ cd ./node_modules/@adiwajshing/baileys
+$ npm install -g typescript
+$ npm run build:tsc
 ```
 
 ### Start Bot
@@ -174,7 +175,7 @@ npm run build:tsc
 Start and Scan QR<br />
 
 ```bash
-npm start
+$ npm start
 ```
 
 # Thanks To
@@ -182,3 +183,7 @@ npm start
 -   [`Faiz Bastomi`](https://github.com/FaizBastomi)
 -   [`Dehante`](https://github.com/Dehanjing)
 -   [`RzkyFdlh`](https://github.com/Rizky878)
+-   [`RizFurr`](https://github.com/rizfurr)
+
+# Credits Thumb Bot
+- [`ShiveloLover - Twitter`](https://twitter.com/ShiveloLover/)
