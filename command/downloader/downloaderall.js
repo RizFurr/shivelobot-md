@@ -13,11 +13,12 @@ module.exports = {
 	wait: true,
 	isUrl: true,
 	isSpam: true,
-	async run({ msg, conn }, { q, map, args }) {
+	async run({ msg, conn }, { q, map, args }) { 
+		let rizz = require("rizfurr-api")
 		var pilih = msg.body.split(/ +/)[0].slice(1);
 		var teks = args[0];
 		let tiktok;
-		if (pilih == "tiktok" || pilih == "tiktokaudio") tiktok = await rzky.downloader.tiktok(teks);
+		if (pilih == "tiktok" || pilih == "tiktokaudio") tiktok = await rizz.downloader.tiktok(teks);
 		var yt = await rzky.downloader.downloaderAll(teks);
 		if (pilih == "downloaderall") return msg.reply("Silahkan Pilih Downloader: tiktok,soundcloud,facebook");
 		var mp3 = yt.mp3[yt.mp3.length - 1];
@@ -101,11 +102,11 @@ module.exports = {
 						msg.from,
 						{
 							video: {
-								url: await resu.video.nowm.video_url,
+								url: await resu.nowm,
 							},
 							caption: await rzky.tools.parseResult(tiktok, { title: "Tiktok Download" }),
 							mimetype: "video/mp4",
-							fileName: tiktok.desc.substr(0, 19) + ".mp4",
+							fileName: tiktok.title.substr(0, 19) + ".mp4",
 							templateButtons: [
 								{ urlButton: { displayText: "Source", url: q } },
 								{ quickReplyButton: { displayText: "Audio🎶", id: "#tiktokaudio " + q } },
@@ -126,7 +127,7 @@ module.exports = {
 						},
 						{ quoted: msg }
 					);
-					await conn.sendFile(msg.from, await resu.audio.audio_url, tiktok.author + ".mp3", "", msg);
+					await conn.sendFile(msg.from, await resu.audio, tiktok.author + ".mp3", "", msg);
 					break;
 			}
 		} catch (err) {
