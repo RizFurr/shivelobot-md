@@ -1,16 +1,16 @@
 {
 	"owner": [
 	"6282196930963@s.whatsapp.net",
-  "62895335475457@s.whatsapp.net",
-  "6289530821681@s.whatsapp.net"
+        "62895335475457@s.whatsapp.net",
+        "6289530821681@s.whatsapp.net"
 	],
 	"thumbImage": "https://pbs.twimg.com/media/FVL9OylVsAAxWVd?format=jpg&name=large",
 	"thumb": "https://pbs.twimg.com/media/FVSaBhWVIAIJTj6?format=jpg&name=large",
 	"session": "session-md.json",
 	"ownername": "RizFurr",
 	"self": false,
-	"server": true,
-	"comment_server": "change 'server' with 'true', if you run in replit/railway/heroku and okteto!",
+	"server": false,
+	"comment_server": "change 'server' with 'true', if you run in replit!",
 	"limit": { "limitUser": 30, "gameLimitUser": 10, "gameLimitPremium": 30 },
 	"packInfo": { "packname": "ShiveloBot!", "author": "@Rizz~" },
 	"namebot": "ShiveloBot!",
