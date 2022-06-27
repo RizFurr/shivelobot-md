@@ -21,6 +21,6 @@ module.exports = {
 		}\n- Release: ${os.release()}\n- Version: ${os.version()}\n`;
 		text += `- Memory: ${formatSize(os.totalmem() - os.freemem())} / ${formatSize(os.totalmem())}\n`;
 		text += `- Platform: ${os.platform()}`;
-		await msg.reply(text);
+		await msg.reply(text, { adReply:true });
 	},
 };
