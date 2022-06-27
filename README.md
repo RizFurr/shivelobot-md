@@ -76,14 +76,14 @@ Isi semua yang dibutuhkan di file [`config.json`](https://github.com/rizfurr/shi
 
 ## Request atau report bug
 
-Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/6282387804410)
+Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/6282196930963)
 
 ## Instalasi On Termux
 
 ### Clone Repo
 
 ```bash
-# Note! Hapus Command elus.js dan 
+# Note! Hapus Command elus.js dan run:
 $ npm uninstall pet-pet-gif
 
 $ pkg install
