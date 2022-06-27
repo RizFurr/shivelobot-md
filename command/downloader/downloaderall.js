@@ -6,10 +6,10 @@ const expand = async (url) => {
 
 module.exports = {
 	name: "downloaderall",
-	alias: ["pinterest", "pindl", "tiktokaudio", "tiktok", "fbdl", "fb", "soundcloud", "facebook"],
+	alias: ["pinterest", "pindl", "tiktokaudio", "tiktok", "fbdl", "fb", "facebook"],
 	use: "<url>",
 	category: "downloader",
-	desc: "Download audio/video from Facebook, Imgur, SoundCloud,  Pinterest, Dan Tiktok",
+	desc: "Download audio/video from Facebook, Imgur, Pinterest, Dan Tiktok",
 	wait: true,
 	isUrl: true,
 	isSpam: true,
@@ -66,28 +66,6 @@ module.exports = {
 							mimetype: "video/mp4",
 							caption: result.replace(/downloader_from/gi, "Downloader From"),
 							fileName: "pinterest.mp4",
-						},
-						{
-							quoted: msg,
-						}
-					);
-					break;
-				case "soundcloud":
-					await conn.sendFile(
-						msg.from,
-						img,
-						"yt.jpg",
-						result.replace(/downloader_from/gi, "Downloader From"),
-						msg
-					);
-					await conn.sendMessage(
-						msg.from,
-						{
-							audio: {
-								url: mp3.url,
-							},
-							mimetype: "audio/mpeg",
-							fileName: yt.title + ".mp3",
 						},
 						{
 							quoted: msg,
