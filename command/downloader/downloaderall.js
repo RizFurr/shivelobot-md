@@ -108,7 +108,6 @@ module.exports = {
 							fileName: tiktok.desc.substr(0, 19) + ".mp4",
 							templateButtons: [
 								{ urlButton: { displayText: "Source", url: q } },
-								{ urlButton: { displayText: "Downloader", url: "https://down.rzkyfdlh.tech" } },
 								{ quickReplyButton: { displayText: "Audio🎶", id: "#tiktokaudio " + q } },
 							],
 						},

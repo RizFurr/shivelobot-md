@@ -148,16 +148,15 @@ module.exports = handler = async (m, conn, map) => {
 			options.adReply
 				? (content.contextInfo = {
 						externalAdReply: {
-							title: "© " + config.namebot,
-							mediaType: 1,
+							title: "©" + config.namebot,
+							mediaType: 2,
+			  mediaType: "PHOTO",
 							//renderLargerThumbnail: true,
-							showAdAttribution: true,
-							body:
-								config.namebot +
-								" multi-device whatsapp bot using JavaScript and made by " +
+							//showAdAttribution: true,
+							body: "multi-device whatsapp bot using JavaScript and made by " +
 								config.ownername,
 							thumbnail: await conn.getBuffer(config.thumb),
-							sourceUrl: "https://github.com/Rizky878/rzky-multidevice/",
+							sourceUrl: "https://github.com/rizfurr/rakubot-md/",
 						},
 				  })
 				: "";
@@ -272,63 +271,6 @@ module.exports = handler = async (m, conn, map) => {
 				}
 				teks += `If true, please re-command!`;
 				await msg.reply(teks);
-			}
-		}
-
-		if (
-			!isCmd &&
-			isUrl(msg.body) &&
-			/tiktok.com|soundcloud.com|imgur.com|pin.it|pinterest.com|youtube.com|youtu.be/i.test(msg.body)
-		) {
-			try {
-				var bod = isUrl(msg.body);
-				var link = bod.find(
-					(a) =>
-						a.includes("tiktok.com") ||
-						a.includes("pin.it") ||
-						a.includes("youtube.com") ||
-						a.includes("youtu.be") ||
-						a.includes("pinterest.com") ||
-						a.includes("imgur.com") ||
-						a.includes("soundcloud.com")
-				);
-				let rz;
-				await msg.reply("@" + sender.split("@")[0] + "\n" + response.wait, { withTag: true });
-				if (link.includes("tiktok.com")) {
-					rz = await rzky.downloader.tiktok(link);
-				} else {
-					rz = await rzky.downloader.downloaderAll(link);
-				}
-				if (rz.url) {
-					var res = rz.mp4[rz.mp4.length - 1] || rz.mp3[rz.mp3.length - 1];
-					delete rz.image;
-					delete rz.status;
-					delete rz.durasi;
-					delete rz.mp4;
-					delete rz.mp3;
-					var parse = await rzky.tools.parseResult(rz, { title: "Auto Download" });
-					await conn.sendFile(msg.from, res.url, Date.now() + "media.mp4", parse, msg);
-				} else if (link.includes("tiktok.com")) {
-					var resu = rz.result;
-					rz.size = resu.video.nowm.size;
-					rz.audio_name = resu.audio.audio_name;
-					delete rz.result;
-					await conn.sendMessage(
-						msg.from,
-						{
-							video: { url: resu.video.nowm.video_url },
-							caption: await rzky.tools.parseResult(rz, { title: "Auto Download" }),
-							templateButtons: [
-								{ urlButton: { displayText: "Source", url: link } },
-								{ urlButton: { displayText: "Downloader", url: "https://down.rzkyfdlh.tech" } },
-								{ quickReplyButton: { displayText: "Audio🎶", id: "#tiktokaudio " + link } },
-							],
-						},
-						{ quoted: msg }
-					);
-				}
-			} catch (e) {
-				console.log(e);
 			}
 		}
 

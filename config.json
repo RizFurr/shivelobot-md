@@ -1,19 +1,19 @@
 {
 	"owner": [
 	"6282196930963@s.whatsapp.net",
-        "62895335475457@s.whatsapp.net",
-        "6289530821681@s.whatsapp.net"
+  "62895335475457@s.whatsapp.net",
+  "6289530821681@s.whatsapp.net"
 	],
-	"thumbvideo": "https://uploader.caliph.my.id/file/hU0F0HZ9K4.mp4",
-	"thumb": "https://telegra.ph/file/d8dba7eee759ff82b35be.jpg",
+	"thumbImage": "https://pbs.twimg.com/media/FVL9OylVsAAxWVd?format=jpg&name=large",
+	"thumb": "https://pbs.twimg.com/media/FVSaBhWVIAIJTj6?format=jpg&name=large",
 	"session": "session-md.json",
 	"ownername": "RizFurr",
 	"self": false,
 	"server": true,
-	"comment_server": "change 'server' with 'true', if you run in replit!",
+	"comment_server": "change 'server' with 'true', if you run in replit/railway/heroku and okteto!",
 	"limit": { "limitUser": 30, "gameLimitUser": 10, "gameLimitPremium": 30 },
-	"packInfo": { "packname": "rakubot!", "author": "@Rizz~" },
-	"namebot": "rakubot!",
+	"packInfo": { "packname": "ShiveloBot!", "author": "@Rizz~" },
+	"namebot": "ShiveloBot!",
 	"timezone": "Asia/Jakarta",
 	"email": "admin@rizfurr.ml",
 	"instagram": "https://instagram.com/prodbyfxntvsy",

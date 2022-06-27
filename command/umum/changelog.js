@@ -64,15 +64,13 @@ module.exports = {
 			await conn.sendMessage(
 				msg.from,
 				{
-					video: await conn.getBuffer(config.thumbvideo),
-					gifPlayback: true,
+					image: await conn.getBuffer(config.thumbImage),
 					caption: str,
 					footer: config.namebot + " • " + config.ownername,
 					templateButtons: [
-						{ urlButton: { displayText: "Shortlink", url: "https://sl.rzkyfdlh.tech" } },
-						{ urlButton: { displayText: "Downloader", url: "https://downloader.rzkyfdlh.tech" } },
+						{ urlButton: { displayText: "Instagram", url: "https://instagram.com/prodbyfxntvsy" } },
 						{ quickReplyButton: { displayText: "Script Bot📑", id: "#script" } },
-						{ quickReplyButton: { displayText: "Owner👥", id: "#owner" } },
+						{ quickReplyButton: { displayText: "Changelog📋", id: "#changelog" } },
 						{ quickReplyButton: { displayText: "Dashboard📊", id: "#db" } },
 					],
 				},

@@ -310,11 +310,11 @@ const connect = async () => {
 	});
 
 	// I don't know what's the point hehe
-	if (!fs.existsSync("./src") || !fs.existsSync("./src/rzky-md.jpg")) {
+	if (!fs.existsSync("./src") || !fs.existsSync("./src/md.jpg")) {
 		fs.mkdir("./src", async function (err) {
 			if (err) {
-				if (!fs.existsSync("./src/rzky-md.jpg")) {
-					fs.writeFile("./src/rzky-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
+				if (!fs.existsSync("./src/md.jpg")) {
+					fs.writeFile("./src/md.jpg", (await require("axios")(config.thumb)).data, function (err) {
 						if (err) {
 							console.log(color("[INFO]", "yellow"), "error writing file", err);
 						} else {
@@ -322,12 +322,12 @@ const connect = async () => {
 						}
 					});
 				}
-				fs.existsSync("./src/rzky-md.jpg")
+				fs.existsSync("./src/md.jpg")
 					? console.log(color("[INFO]", "yellow"), "failed to create directory", err)
 					: "";
 			} else {
 				console.log(color("[INFO]", "yellow"), `Succes create a "src" file`);
-				fs.writeFile("./src/rzky-md.jpg", (await require("axios")(config.thumb)).data, function (err) {
+				fs.writeFile("./src/md.jpg", (await require("axios")(config.thumb)).data, function (err) {
 					if (err) {
 						console.log(color("[INFO]", "yellow"), "error writing file", err);
 					} else {
@@ -338,8 +338,8 @@ const connect = async () => {
 		});
 	}
 
-	// detect Reaction message
-	conn.ev.on("messages.reaction", async (m) => {
+	/*detect Reaction message
+conn.ev.on("messages.reaction", async (m) => {
 		if (m.reaction.key.id.startsWith("BAE5") && m.reaction.key.id.length === 16) return;
 		let mesg = await store.loadMessage(m.reaction.key.remoteJid, m.key.id, conn);
 		let frem = m.reaction.key.remoteJid.endsWith("@g.us") ? m.reaction.key.participant : m.reaction.key.remoteJid;
@@ -356,7 +356,7 @@ const connect = async () => {
 			},
 			{ quoted: mesg }
 		);
-	});
+	});*/
 
 	// detect group update
 	conn.ev.on("groups.update", async (json) => {

@@ -29,58 +29,37 @@ module.exports = {
 			case "play":
 				await conn.sendMessage(msg.from, {
 					image: { url: yt[0].thumb },
-					caption: await rzky.tools.parseResult(yt[0], { title: "Youtube" }),
+					caption: await rzky.tools.parseResult(yt[0], { title: "Youtube Downloader",
+delete: ["link"],																			 }),
 					templateButtons: [
 						{ urlButton: { displayText: "Source", url: teks } },
-						{ urlButton: { displayText: "Short Link", url: "https://sl.rzkyfdlh.tech" } },
 						{ quickReplyButton: { displayText: "Audio 🎶", id: "#ytmp3 " + teks } },
-						{ quickReplyButton: { displayText: "Video 🎥", id: "#ytmp4 " + teks } },
-						{ quickReplyButton: { displayText: "Document Audio 📄", id: "#ytmp3 " + teks + " --doc" } },
-					],
+						{ quickReplyButton: { displayText: "Video 🎥", id: "#ytmp4 " + teks } }
+						],
 				});
 				break;
 			case "ytmp3":
-				await conn.sendFile(msg.from, yt[0].link, yt[0].judul + ".mp3", "", msg, false, {
-					asDocument: q.endsWith("--doc"),
-				});
+				await conn.sendMessage(msg.from, { document: { url: yt[0].link}, mimetype:"audio/mpeg", fileName: yt[0].judul + ".mp3"}, { quoted: msg });
 				break;
-			case "ytmp4":
-				if (q.endsWith("--doc")) {
-					await conn.sendFile(msg.from, yt[0].link, yt[0].judul + ".mp4", "", msg, false, {
-						asDocument: true,
-					});
-				} else {
-					try {
-						await conn.sendMessage(
-							msg.from,
-							{
-								video: {
-									url: yt[0].link,
-								},
-								mimetype: "video/mp4",
-								caption: await rzky.tools.parseResult(yt[0], { title: "Youtube" }),
-								fileName: yt.title + ".mp4",
-								templateButtons: [
-									{ urlButton: { displayText: "Source", url: teks } },
-									{
-										quickReplyButton: {
-											displayText: "Document 📄",
-											id: "#ytmp4 " + teks + " --doc",
-										},
-									},
-								],
-							},
-							{
-								quoted: msg,
-							}
-						);
-					} catch {
-						await msg.reply("Size Terlalu besar, media akan dikirim melalui document");
-						await conn.sendFile(msg.from, yt[0].link, yt[0].judul + ".mp4", "", msg, false, {
-							asDocument: true,
-						});
-					}
-				}
+case "ytmp4":
+				await conn.sendMessage(
+					msg.from,
+					{
+						video: {
+							url: yt[0].link,
+						},
+						mimetype: "video/mp4",
+						caption: await rzky.tools.parseResult(yt[0], { title: "Youtube Video Downloader",
+delete: ["link"],}),
+						fileName: yt.title + ".mp4", 
+						templateButtons: [
+						{ urlButton: { displayText: "Source", url: teks } },
+						],
+					}, 
+					{
+						quoted: msg,
+					} 
+				);
 				break;
 		}
 	},
