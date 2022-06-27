@@ -1,10 +1,10 @@
 {
-  "name": "rzky-multidevice",
-  "version": "4.0.0",
+  "name": "sivelobot-multidevice",
+  "version": "5.0.0",
   "main": "index.js",
   "depecrated": false,
   "license": "MIT",
-  "author": "RizkyFadilah",
+  "author": "RizFurr",
   "scripts": {
     "start": "node .",
     "format": "prettier --write '**/*.{md,js,json}'"
@@ -71,7 +71,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rizky878/rzky-multidevice.git"
+    "url": "git+https://github.com/RizFurr/shivelobot.git"
   },
   "keywords": [
     "bot-md",
@@ -84,7 +84,7 @@
     "WhatsApp"
   ],
   "bugs": {
-    "url": "https://github.com/Rizky878/rzky-multidevice/issues"
+    "url": "https://github.com/RizFurr/shivelobot/issues"
   },
-  "homepage": "https://github.com/Rizky878/rzky-multidevice#readme"
+  "homepage": "https://github.com/RizFurr/shivelobot#readme"
 }
