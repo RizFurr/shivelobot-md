@@ -12,10 +12,10 @@ const uploadFile = (path) =>
 		fd.append("file", fs.createReadStream(path));
 		Axios({
 			method: "POST",
-			url: "https://uploader.caliph.my.id/upload",
+			url: "https://file.rizfurr.ml/api/upload",
 			data: fd,
 			headers: {
-				"user-agent": "MRHRTZ-ZONE :D",
+				"user-agent": "RizFurr UwU",
 				"content-type": `multipart/form-data; boundary=${fd._boundary}`,
 			},
 		})
