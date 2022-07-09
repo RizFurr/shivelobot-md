@@ -155,7 +155,7 @@ module.exports = handler = async (m, conn, map) => {
 							//showAdAttribution: true,
 							body: "Multi-Device Whatsapp Bot Using JavaScript And Made By " + config.ownername,
 							thumbnail: await conn.getBuffer(config.thumb),
-							sourceUrl: "https://github.com/rizfurr/ShiveloBot-MD/",
+							sourceUrl: 'https://rizfurr.ml/",
 						},
 				  })
 				: "";
