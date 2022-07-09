@@ -94,7 +94,7 @@ const limitData = cron.schedule(
 let data = fs.readFileSync(path.join(__dirname, "doom.flf"), "utf8");
 require("figlet").parseFont("doom", data);
 require("figlet").text(
-	"RZKY MD",
+	"Rizz MD",
 	{
 		font: "doom",
 		horizontalLayout: "default",
@@ -338,7 +338,7 @@ const connect = async () => {
 		});
 	}
 
-	/*detect Reaction message
+	//detect Reaction message
 conn.ev.on("messages.reaction", async (m) => {
 		if (m.reaction.key.id.startsWith("BAE5") && m.reaction.key.id.length === 16) return;
 		let mesg = await store.loadMessage(m.reaction.key.remoteJid, m.key.id, conn);
@@ -356,7 +356,7 @@ conn.ev.on("messages.reaction", async (m) => {
 			},
 			{ quoted: mesg }
 		);
-	});*/
+	});
 
 	// detect group update
 	conn.ev.on("groups.update", async (json) => {
